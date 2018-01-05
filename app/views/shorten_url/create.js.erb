@@ -1,0 +1,14 @@
+<% if @shorten_url.errors.any? %>
+  <% @shorten_url.errors.full_messages.each do |m| %>
+  Materialize.toast(
+    '<i class="material-icons">error</i><%= m %>', 1000, 'rounded red darken1'
+  )
+  <% end %>
+  <% if url = ShortenUrl.find_by(url: @shorten_url.url) %>
+    $('#result_url').html('<%= request.base_url%>/<%= url.shorten %>')
+  <% end %>
+<% else %>
+  $('#result_url').html('<%= request.base_url%>/<%= @shorten_url.shorten %>')
+<% end %>
+
+

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>MyShortenUrl</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <header class="navbar-fixed">
+      <nav class="blue darken1">
+        <div class="nav-wrapper">
+          <a href="#" class="brand-logo center"><i class="material-icons">bookmark_border</i>Can't tuts</a>
+        </div>
+      </nav>
+    </header>
+    <div class="section container">
+      <div class="card">
+        <div class="card-content center">
+          <%= yield %>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
